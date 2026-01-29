@@ -1,59 +1,58 @@
-Senior Full-Stack Software Engineer
+Lead Mission Engineer (Full Stack)
+Remote
+The Team:  
 
-About the Company
+Information processing and sense-making systems are the lifeblood of national security efforts, facilitating an understanding of the global situation, strategic planning, and tactical execution. The reliability, accessibility, and sophistication of these systems can determine the outcomes of conflicts before they begin. STR’s Analytics and Command & Control (AC2) Division focuses on developing actionable, advanced technology solutions to provide asymmetric advantages within the information domain. 
 
-TechCorp is a fast-growing B2B SaaS company building enterprise software solutions. We've recently raised our Series B and are scaling our engineering team to support rapid growth.
+The Mission Applications (MA) Group within the AC2 Division specializes in ensuring the technology that STR creates produces outsized mission impact. Staff within the MA group have a deep understanding of missions and technology needs for national security with skills targeting transition of technology to operational use, including product management, UX Product implementation, software integration & mission engineering, DevSecOps, and program management. MA staff combine with other science and engineering staff from the various STR research and development groups to form dedicated product teams focused on accelerating the operational transition of cutting-edge software technologies. 
 
-About the Role
+The Role: 
 
-We're seeking a Senior Full-Stack Software Engineer to join our product engineering team. This is a high-ownership role for engineers who enjoy building end-to-end features, working closely with product and design, and shipping impactful solutions.
+As a Mission Engineer (Full Stack) in the Mission Applications Group, you will develop and deploy software essential for a specific, real-world objective or "mission" in partnership with our customers. You have: 1) expertise in developing and deploying software solutions in complex and high-security environments, 2) deep domain knowledge in the complex missions executed across the Department of Defense, and 3) expertise in modern javascript frameworks and integrating APIs (RESTful, GraphQL, Kafka) seamlessly into frontend applications for deployment in high-security environments. 
 
-Location: Remote (US/Canada)
-Compensation: $140K-$180K base + equity
-Employment: Full-time
+You will work as a leader of tightly knit Agile software teams to design, develop, and maintain software systems deployed in operational use.  You have experience managing customer relationships while simultaneously leading engineering teams to ensure the delivered product meets the highest standards of quality, reliability, and performance.  This role includes: 
 
-What You'll Do
+Develop and Enhance Features: Create high-performance, visually appealing frontend solutions that handle complex use cases effectively. Ensure the product is fast, smooth, and intuitive to use, even under heavy load. 
+System Integration: Leading design and writing code that integrates various components into a single, cohesive system leveraging a component and feature team construct. 
+Customer Collaboration: Working closely with end-users and customers, who are typically military or Government operators, to understand their requirements and translate them into software features. You are experienced in product discovery best practices. 
+Deployment and Field Testing: Traveling to integration sites to deploy, test, and triage software in secure operational environments. 
+This role will take advantage of STR’s flexible, hybrid environment – when the work does not require use of STR’s or the customer’s facilities, you are welcome to work remotely.  
 
-- Build and ship new product features from concept through production
-- Own projects end-to-end across frontend and backend systems
-- Collaborate with product managers and designers on roadmap planning
-- Write clean, maintainable code with comprehensive test coverage
-- Participate in code reviews and contribute to engineering best practices
-- Work directly with customers to understand their workflows and pain points
+Who You Are: 
 
-Required Qualifications
+Must be a U.S. citizen
+Active US Security Clearance 
+BS in Computer Science or related technical field with at least 5 years of work experience
+Experience deploying software for DoD or IC missions
+A passion for crafting beautiful, user-centric interfaces and a keen eye for design details
+Demonstrated strong knowledge of modern frontend technologies such as React and TypeScript
+Knowledge of performance-focused tools and techniques for rendering large datasets and building responsive, smooth interfaces
+Experience with the following: 
+Seamlessly integrating APIs (RESTful, GraphQL or Kafka) into frontend applications 
+Service oriented architectures or micro-service architectures 
+Containerization/orchestration tools such as Docker and Kubernetes 
+Agile software lifecycle methodologies and tools, such as JIRA and SonarQube 
+DevOps or CI/CD tools such as Gitlab 
+Test-driven development methodologies 
+A demonstrated ability to adopt new languages, libraries, and technologies
+Organized, detail-oriented, and with an ability to work both independently and collaboratively
+Demonstrated experience as an effective communicator to both technical and non-technical audiences 
+Even Better: 
 
-- 5+ years of professional software engineering experience
-- Strong experience with TypeScript, JavaScript, React, and Node.js
-- Experience building and scaling production applications
-- Solid understanding of RESTful APIs and database design
-- Experience with AWS or similar cloud platforms
-- Strong communication skills and ability to work collaboratively
-- Bachelor's degree in Computer Science or related field (or equivalent experience)
+Active Security Clearance at the Top Secret level with SCI Eligibility
+Advanced Degree in Computer Science, Information Technology, or related technical field
+Prior US Military Service with experience in joint planning, large force battle monitoring, and fluidity with large force debrief best practices
+Located near STR office in Carlsbad, CA or near Honolulu, HI 
+Pay Information
+Full-Time Salary Range: $157,000 - $224,000
 
-Nice to Have
+The salary range listed is based on external market data. Offers are based on factors, such as but not limited to, the candidate’s experience, education, training, key skills/critical skills, security clearances, and prevailing market and business conditions.
 
-- Experience with microservices architecture
-- Knowledge of Docker, Kubernetes, or container orchestration
-- Experience with CI/CD pipelines and DevOps practices
-- Background in B2B SaaS or enterprise software
-- Experience with PostgreSQL, Redis, or similar databases
-- Open source contributions or technical writing
-- Experience mentoring junior engineers
+STR is a growing technology company with locations near Boston, MA, Arlington, VA, near Dayton, OH, Melbourne, FL, and Carlsbad, CA. We specialize in advanced research and development for defense, intelligence, and national security in: cyber; next generation sensors, radar, sonar, communications, and electronic warfare; and artificial intelligence algorithms and analytics to make sense of the complexity that is exploding around us.
 
-Our Tech Stack
+STR is committed to creating a collaborative learning environment that supports deep technical understanding and recognizes the contributions and achievements of all team members. Our work is challenging, and we go home at night knowing that we pushed the envelope of technology and made the world safer.
 
-- Frontend: React, TypeScript, Next.js
-- Backend: Node.js, Express, TypeScript
-- Database: PostgreSQL, Redis
-- Infrastructure: AWS, Docker, Kubernetes
-- Tools: GitHub, Jira, Datadog
+STR is not just any company. Our people, culture, and attitude along with their unique set of skills, experiences, and perspectives put us on a trajectory to change the world. We can't do it alone, though - we need fellow trailblazers. If you are one, join our team and help to keep our society safe! Visit us at www.str.us for more info.
 
-What We Offer
 
-- Competitive salary and equity package
-- Comprehensive health benefits
-- Flexible remote work
-- Professional development budget
-- Modern tech stack and tooling
-- Collaborative, high-performing team culture
+STR is an equal opportunity employer. We are fully dedicated to hiring the most qualified candidate regardless of race, color, religion, sex (including gender identity, sexual orientation and pregnancy), marital status, national origin, age, veteran status, disability, genetic information or any other characteristic protected by federal, state or local laws.

@@ -4,22 +4,25 @@ Generate ATS-optimized, tailored resumes from your master resume data using Clau
 
 ## Overview
 
-This resume builder uses Claude AI to analyze job descriptions and automatically generate tailored resumes optimized for both ATS (Applicant Tracking Systems) and human recruiters.
+This resume builder uses Claude AI to analyze job descriptions and generate tailored resumes optimized for Applicant Tracking Systems (ATS). It preserves your original writing while making surgical keyword insertions to maximize match rates.
 
 **Key Features:**
-- Scores and selects most relevant experience bullets for each job
-- Rewrites bullets with job-specific keywords while maintaining truthfulness
-- Generates optimized professional summaries
-- Reorders skills to match job requirements
-- Produces one-page, professionally formatted Word documents
+- Preserves your original resume text with minimal changes
+- Asks about skill gaps before making assumptions
+- Presents ATS optimization suggestions one-by-one for your approval
+- Interactive screenshot feedback to ensure one-page fit
+- Generates professionally formatted Word documents
 
 ## How It Works
 
-1. **You maintain a master resume** (`resume_data_example.json`) with ALL your experiences, skills, and achievements
+1. **You maintain a master resume** (`resume_data_example.json`) with ALL your experiences and skills
 2. **You provide a job description** (text file)
-3. **Claude analyzes the job** and scores each bullet for relevance
-4. **Claude generates a tailored resume** optimized for that specific role
-5. **Python formats it perfectly** into a `.docx` file
+3. **Claude identifies gaps** and asks if you have experience with missing skills
+4. **Claude generates a tailored summary** optimized for the job
+5. **Claude reorders skills** to prioritize job keywords
+6. **ATS optimization loop** presents keyword insertion opportunities one-by-one
+7. **Screenshot verification** ensures the resume fits on one page
+8. **Python formats it** into a `.docx` file
 
 ## Setup
 
@@ -31,18 +34,18 @@ pip install python-docx --break-system-packages
 
 ### 2. Create Your Master Resume Data
 
-Copy `resume_data_example.json` and customize it with your information:
+Edit `resume_data_example.json` with your information:
 
 ```json
 {
   "name": "YOUR NAME",
-  "title": "Your Job Title",
-  "clearance": "Optional Clearance/Credential",
+  "title": "Your Job Title (Optional Credential)",
   "contact": {
     "location": "City, State",
     "phone": "555.123.4567",
     "email": "your.email@example.com"
   },
+  "summary": "Your default professional summary (will be rewritten for each job).",
   "skills": {
     "Category 1": ["Skill1", "Skill2", "Skill3"],
     "Category 2": ["Skill4", "Skill5"]
@@ -50,8 +53,10 @@ Copy `resume_data_example.json` and customize it with your information:
   "experiences": [
     {
       "company": "COMPANY NAME",
-      "title": "Your Title",
-      "dates": "MM/YYYY -- MM/YYYY",
+      "title": "Your Current Title",
+      "dates": "MM/YYYY - Present",
+      "previousTitle": "Previous Title (optional - for promotions)",
+      "previousDates": "MM/YYYY - MM/YYYY (optional)",
       "bullets": [
         {
           "title": "Short Title",
@@ -69,230 +74,138 @@ Copy `resume_data_example.json` and customize it with your information:
 }
 ```
 
-**Important Tips for Master Resume Data:**
-
-- **Be truthful:** Only include actual accomplishments with real metrics
-- **Be comprehensive:** Include ALL experiences - the AI will select the best ones
-- **Include metrics:** Whenever possible, quantify impact (users served, % improvement, team size, etc.)
-- **Add keywords:** Help the AI understand what technologies and concepts each bullet demonstrates
-- **Title field (optional):** Your current/target title (e.g., "Senior Software Engineer")
-- **Clearance field (optional):** Any clearance or credential to display (e.g., "Active Secret Clearance", "PMP Certified")
-
-### 3. Install the Claude Code Skill
-
-The `/resume` skill is located in `.claude/skills/resume/skill.md`. Claude Code automatically loads skills from this directory.
+**Field Notes:**
+- `title`: Include clearance or credentials here (e.g., "Senior Engineer (Active Secret Clearance)")
+- `previousTitle` / `previousDates`: Optional - use for showing promotions at same company
+- `keywords` / `categories` in bullets: Optional - help Claude understand what each bullet demonstrates
+- Any number of experiences and bullets supported
+- Education can be strings or objects
 
 ## Usage
 
 ### Generate a Tailored Resume
 
-**Option 1: Use sample data (for testing)**
 ```bash
-/resume sample_job.txt
-```
-This will use `resume_data_example.json` by default.
-
-**Option 2: Use your own master resume**
-```bash
-/resume sample_job.txt my_resume_data.json
+/resume job_description.txt
 ```
 
-**Option 3: For a real job application**
-1. Save the job description to a text file (e.g., `fintech_job.txt`)
-2. Run the resume skill:
-   ```bash
-   /resume fintech_job.txt my_resume_data.json
-   ```
-
-**Try the included samples:**
+Or specify a custom master resume:
 ```bash
-# Full-stack job example
-/resume sample_job.txt my_resume_data.json
-
-# Backend job example
-/resume backend_job.txt my_resume_data.json
+/resume job_description.txt my_resume_data.json
 ```
 
 ### What Happens
 
-Claude will:
-1. Analyze the job description for required skills, keywords, and responsibilities
-2. Score every bullet in your master resume (0-100) based on relevance
-3. Select the top bullets for a one-page resume (typically 10-12 bullets)
-4. Rewrite bullets with job-specific keywords while staying truthful
-5. Generate an optimized professional summary (40 words max)
-6. Reorder skills to match job requirements
-7. Create `[jobname]_tailored.json` with the optimized data
-8. Generate `[jobname]_resume.docx` with perfect formatting
+1. **Gap Analysis**: Claude identifies skills in the job posting that aren't in your resume
+2. **Gap Questions**: You're asked about missing skills (e.g., "Do you have GraphQL experience?")
+3. **Resume Generation**: Creates tailored JSON with new summary and reordered skills
+4. **ATS Optimization Loop**:
+   - Calculates initial ATS keyword match score
+   - Presents keyword insertion opportunities one-by-one
+   - You approve or skip each change
+   - Continues until score reaches 90%+ and all suggestions are presented
+5. **Screenshot Verification**: You share a screenshot if it overflows one page
+6. **Final Report**: Shows matched keywords and remaining gaps
+7. **Cleanup**: Deletes intermediate `*_tailored.json` files
 
-### Customizing Bullet Limits
+### Example Session
 
-By default, the skill uses these limits for one-page fit:
-- Most recent position: 3-5 bullets
-- Previous senior positions: 2-3 bullets each
-- Mid-level positions: 1-2 bullets each
-- Early career: 1 bullet or omit
+```
+> /resume backend_job.txt
 
-**To customize for your career stage and resume length:**
+Gap Analysis:
+- GraphQL: Not in resume
+- SonarQube: Not in resume
 
-Edit `.claude/skills/resume/skill.md` and modify the bullet limits in **Step 4** to match your situation.
+Q: Do you have GraphQL experience?
+A: No
 
-Examples:
-- **Senior with 15+ years:** May need tighter limits (3/2/1/0) to fit one page
-- **Mid-level with 5 years:** Can use default limits (3-5/2-3/1-2)
-- **Entry-level:** May allocate more bullets to recent positions
+Q: Do you have SonarQube experience?
+A: Yes
 
-## Quick Start
+Initial ATS Score: 77% (17/22 keywords)
 
-1. **Install dependencies:**
-   ```bash
-   pip install python-docx --break-system-packages
-   ```
+Q: Add 'frontend development' to summary?
+   Current: "...Expert in React, TypeScript, microservices..."
+   Proposed: "...Expert in React, TypeScript, frontend development, microservices..."
+A: Yes
 
-2. **Copy and customize your master resume:**
-   ```bash
-   cp resume_data_example.json my_resume_data.json
-   # Edit my_resume_data.json with your actual experience
-   ```
+Updated Score: 82%
 
-3. **Test with sample job:**
-   ```bash
-   /resume sample_job.txt my_resume_data.json
-   ```
+[...more suggestions...]
 
-4. **Check the generated resume:**
-   - `sample_tailored.json` - Tailored resume data
-   - `sample_resume.docx` - Formatted Word document
+Final Score: 95%
+
+Please check if resume fits on one page. Share screenshot if overflow.
+
+[User confirms it fits]
+
+Resume Complete!
+- Matched Keywords: 21/22 (95%)
+- File: backend_resume.docx
+```
 
 ## File Structure
 
 ```
 project/
 ├── README.md                          # This file
-├── .gitignore                         # Excludes generated files from git
-├── resume_data_example.json           # Sample master resume data (use as template)
+├── resume_data_example.json           # Your master resume data
 ├── create_resume.py                   # Python formatter (formatting only)
 ├── .claude/skills/resume/skill.md     # Claude Code skill definition
-├── sample_job.txt                     # Example full-stack job description
+├── sample_job.txt                     # Example job description
 ├── backend_job.txt                    # Example backend job description
 └── (generated files)
-    ├── *_tailored.json                # Generated tailored resume data
     └── *_resume.docx                  # Generated Word documents
 ```
 
 ## Key Principles
 
-### 1. No Fabrication
-The AI **never** makes up metrics, team sizes, or accomplishments. It only uses information explicitly in your master resume data.
+### 1. Preserve Original Text
+Your bullet text is preserved as much as possible. Only surgical keyword insertions are made (e.g., adding "high-performance" or "system integration").
 
-### 2. ATS Optimization
+### 2. No Fabrication
+Claude **never** makes up skills or experience. If you don't have a skill, it remains a gap.
+
+### 3. User Approval
+Every text change is presented for your approval before being applied.
+
+### 4. ATS Optimization
 - Uses exact keyword matches from job descriptions
+- Reorders skills to prioritize job requirements
 - Includes both acronyms and full forms (e.g., "Kubernetes (K8s)")
-- Front-loads important keywords in bullets
-- Mirrors job posting language
 
-### 3. Human Optimization
-- Starts bullets with impact/outcome
-- Quantifies everything possible
-- Shows business value, not just technical tasks
-- Demonstrates progression and responsibility
+### 5. One-Page Focus
+The screenshot feedback loop helps trim content to fit one page while preserving ATS keywords.
 
-### 4. One-Page Focus
-- Uses strict word limits per bullet (Lead: 32 words, Senior: 28 words, Mid-level: 12 words)
-- Prioritizes most recent and relevant experience
-- Omits or condenses early career positions
+## Customizing Formatting
 
-## Tips for Best Results
+The Python script (`create_resume.py`) handles all formatting. To customize:
 
-### Writing Master Resume Bullets
-
-**Good bullet (specific, quantified, impactful):**
-```
-"Led architecture and development of customer engagement platform serving 500k daily users using React, TypeScript, and Node.js microservices on AWS; mentored team of 3 engineers and established code review standards."
-```
-
-**Bad bullet (vague, no metrics):**
-```
-"Worked on platform features and helped team members."
-```
-
-### Professional Summary
-
-The AI generates a 2-sentence summary (40 words max) optimized for ATS. It:
-- Front-loads with your title and years of experience
-- Packs in 5-7 top keywords from the job
-- Highlights 1 key achievement (only if in your master resume)
-
-Example:
-```
-"Senior Backend Engineer with 6+ years building scalable Java Spring Boot microservices and event-driven systems on AWS using Kafka, Kubernetes, and Terraform. Architected distributed systems serving millions of users."
-```
-
-### Job Description Files
-
-- Save as plain text (.txt)
-- Include the full job posting (requirements, responsibilities, nice-to-haves)
-- More detail = better keyword matching
+- **Fonts**: Edit `FONT_HEADER` and `FONT_BODY` constants
+- **Sizes**: Edit `SIZE_NAME`, `SIZE_BODY`, `SIZE_SECTION` values
+- **Margins**: Edit `MARGINS` value (in inches)
+- **Spacing**: Edit `SPACE_*` values (in points)
 
 ## Troubleshooting
 
 ### Resume Overflows One Page
 
-If the generated resume is too long:
-1. Claude will suggest reducing oldest position bullets
-2. You can edit `.claude/skills/resume/skill.md` to use tighter bullet limits
-3. Shorten professional summary to 1-2 sentences (25 words)
-4. Remove skills not mentioned in job posting
+Share a screenshot and Claude will suggest:
+1. Trimming orphaned words (short lines)
+2. Removing non-essential skills (not in job posting)
+3. Shortening older position bullets
+4. As last resort, removing oldest positions
 
-### Missing Required Skills
+### Missing python-docx
 
-If the job requires skills you don't have in your master resume:
-1. Claude will warn you about missing skills
-2. If you DO have the skill but forgot to add it, update `resume_data.json`
-3. If you DON'T have the skill, consider whether you still want to apply
-
-### Python Errors
-
-If you get "python-docx not installed":
 ```bash
 pip install python-docx --break-system-packages
 ```
 
-## Example Workflow
+### ATS Score Won't Reach 90%
 
-1. **Maintain your master resume:**
-   - Add new accomplishments monthly
-   - Quantify impact whenever possible
-   - Keep ALL experiences (AI selects the best)
-
-2. **Find a job to apply for:**
-   - Save job description to `fintech_job.txt`
-
-3. **Generate tailored resume:**
-   ```bash
-   /resume fintech_job.txt my_resume_data.json
-   ```
-
-4. **Review output:**
-   - Check `fintech_tailored.json` for selected bullets
-   - Open `fintech_resume.docx` to verify formatting
-   - Ensure one-page fit
-
-5. **Apply with confidence:**
-   - Resume is ATS-optimized with exact keywords
-   - Human-readable with metrics and impact
-   - Tailored specifically for this role
-
-## Advanced: Customizing Formatting
-
-The Python script (`create_resume.py`) handles all formatting. To customize:
-
-- **Fonts:** Edit `Pt(11)` and `Pt(10.5)` values
-- **Margins:** Edit `Inches(0.5)` values
-- **Spacing:** Edit `Pt(2)`, `Pt(4)`, `Pt(8)`, `Pt(12)` values
-- **Layout:** Modify paragraph styles and alignment
-
-The script is deliberately simple (no AI calls) so you can easily customize formatting without affecting the AI logic.
+If the job requires skills you don't have (like GraphQL), the score may not reach 90%. This is expected - don't fabricate experience.
 
 ## License
 
@@ -300,4 +213,4 @@ Free to use and modify for personal use.
 
 ## Credits
 
-Built using Claude Code and the Claude API.
+Built using Claude Code.

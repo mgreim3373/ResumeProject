@@ -1,133 +1,163 @@
 {
-  "name": "ALEX JOHNSON",
-  "title": "Senior Software Engineer",
+  "name": "MIKE GREIM",
+  "title": "Lead Software Engineer (Active Secret Clearance)",
   "contact": {
-    "location": "San Francisco, CA",
-    "phone": "555.123.4567",
-    "email": "alex.johnson@email.com"
+    "location": "Seattle, WA",
+    "phone": "949.244.7806",
+    "email": "mgreim3373@gmail.com"
   },
+  "summary": "Lead Software Engineer with 6+ years experience delivering mission-critical Java/Spring microservices. Expert in architecting secure GovCloud infrastructure, AI-driven tools, and Terraform-managed environments.",
   "skills": {
     "Languages & Frameworks": [
+      "Java",
+      "Spring Boot",
+      "SQL",
       "TypeScript",
-      "JavaScript",
-      "Python",
-      "React",
       "Node.js",
-      "Django",
+      "React",
       "Next.js",
-      "GraphQL"
+      "Python"
     ],
     "Cloud & DevOps": [
-      "AWS",
-      "Docker",
-      "Kubernetes",
+      "AWS (GovCloud, Lambda, ECS)",
+      "Kubernetes (k8s)",
       "Terraform",
-      "CI/CD",
-      "Jenkins",
-      "GitHub Actions"
+      "Docker",
+      "GitLab CI",
+      "IAM",
+      "OAuth2"
     ],
     "Architecture & Data": [
       "Microservices",
-      "REST APIs",
+      "Event-Driven Systems",
+      "Kafka",
+      "RabbitMQ",
       "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "Event-Driven Architecture"
+      "Elasticsearch",
+      "REST"
     ],
-    "AI & Tools": [
-      "Git",
-      "Jira",
-      "Agile",
+    "AI & Engineering Tools": [
+      "Claude Code",
+      "Cursor",
+      "LLM Agent Workflows",
+      "Amazon Bedrock",
+      "Jira"
+    ],
+    "Observability & Practices": [
+      "Prometheus",
+      "Grafana",
+      "OpenTelemetry",
       "TDD",
-      "System Design"
+      "JUnit",
+      "Mockito",
+      "Agile"
     ]
   },
   "experiences": [
     {
-      "company": "TECH INNOVATIONS INC",
-      "title": "Senior Software Engineer",
-      "dates": "06/2022 -- Present",
+      "company": "RAFT LLC",
+      "title": "Lead Software Engineer",
+      "dates": "05/2025 - Present",
+      "previousTitle": "Senior Software Engineer",
+      "previousDates": "07/2023 - 05/2025",
       "bullets": [
         {
-          "title": "Platform Architecture & Leadership",
-          "text": "Led architecture and development of customer engagement platform serving 500k daily users using React, TypeScript, and Node.js microservices on AWS; mentored team of 3 engineers and established code review standards.",
-          "keywords": ["architecture", "React", "TypeScript", "Node.js", "AWS", "microservices", "leadership", "mentorship"],
-          "categories": ["Full Stack", "Architecture", "Leadership"]
+          "title": "AI Automation Leadership",
+          "text": "Led a 4-engineer squad architecting an AI-powered schema and parsing code generation tool (React/LLM); managed sprint planning and technical story breakdown while partnering with Product stakeholders to productize the prototype into a core commercial offering.",
+          "keywords": ["AI", "LLM", "React", "leadership", "sprint planning", "product", "architecture", "code generation"],
+          "categories": ["AI", "Leadership", "Architecture"]
         },
         {
-          "title": "Performance Optimization",
-          "text": "Reduced API response time by 60% through database query optimization and Redis caching implementation; improved page load speed by 40% using Next.js server-side rendering.",
-          "keywords": ["performance", "optimization", "Redis", "caching", "Next.js", "database"],
-          "categories": ["Performance", "Backend"]
+          "title": "Cloud & Analytics",
+          "text": "Built a critical uptime monitoring system for government clients; directed the deployment of secure, Terraform-managed infrastructure (Superset, Redshift, Keycloak) on AWS GovCloud, implementing GitLab CI pipelines that reduced deployment time from hours to minutes.",
+          "keywords": ["AWS GovCloud", "Terraform", "GitLab CI", "monitoring", "Superset", "Redshift", "Keycloak", "infrastructure", "government"],
+          "categories": ["Cloud", "DevOps", "Infrastructure"]
         },
         {
-          "title": "CI/CD & Infrastructure",
-          "text": "Designed and implemented automated CI/CD pipeline using GitHub Actions and Docker, reducing deployment time from 2 hours to 15 minutes with zero-downtime deployments.",
-          "keywords": ["CI/CD", "GitHub Actions", "Docker", "automation", "deployment", "infrastructure"],
-          "categories": ["DevOps", "Infrastructure"]
+          "title": "Technical Strategy",
+          "text": "Defined engineering standards for company-wide AI adoption (Claude Code); aligned leadership stakeholders on tooling best practices that unified development patterns across the organization.",
+          "keywords": ["AI adoption", "Claude Code", "engineering standards", "tooling", "leadership", "best practices"],
+          "categories": ["Leadership", "AI", "Strategy"]
+        },
+        {
+          "title": "Mission-Critical Event Systems",
+          "text": "Enhanced the Air Force command and control suite by maintaining an asynchronous event management service (produce/consume/replay) using Java, Spring, RabbitMQ, and Redis; managed SQL persistence and ensured system stability through rigorous TDD and integration testing.",
+          "keywords": ["Java", "Spring", "RabbitMQ", "Redis", "event-driven", "Air Force", "TDD", "integration testing", "SQL"],
+          "categories": ["Backend", "Event Systems", "Government"]
         }
       ]
     },
     {
-      "company": "DIGITAL SOLUTIONS CO",
-      "title": "Software Engineer",
-      "dates": "08/2020 -- 06/2022",
+      "company": "JOBCASE",
+      "title": "Senior Software Engineer",
+      "dates": "07/2022 - 04/2023",
+      "previousTitle": "Software Engineer",
+      "previousDates": "03/2021 - 07/2022",
       "bullets": [
         {
-          "title": "Full-Stack Development",
-          "text": "Built e-commerce checkout system processing $2M+ monthly revenue using React frontend and Django REST backend; integrated Stripe payments and implemented fraud detection.",
-          "keywords": ["React", "Django", "REST API", "payments", "Stripe", "e-commerce", "full-stack"],
+          "title": "Full-Stack Architecture",
+          "text": "Engineered scalable microservice features for a 250k+ DAU social platform using React, Java Spring, and AWS.",
+          "keywords": ["React", "Java Spring", "AWS", "microservices", "scalable", "social platform"],
+          "categories": ["Full Stack", "Architecture", "Backend"]
+        },
+        {
+          "title": "Notification System Architecture",
+          "text": "Designed and built persistent cross-user messaging engine driving engagement for tens of thousands of users; defined the logic for follow suggestions and complex comment interactions.",
+          "keywords": ["messaging", "notifications", "engagement", "user interactions", "architecture"],
+          "categories": ["Backend", "Architecture", "Product"]
+        },
+        {
+          "title": "Operational Excellence",
+          "text": "Established robust monitoring and testing protocols using New Relic, Sumo Logic, and regression testing; served as a primary on-call engineer to minimize platform downtime.",
+          "keywords": ["monitoring", "New Relic", "Sumo Logic", "regression testing", "on-call", "reliability"],
+          "categories": ["Observability", "Testing", "Operations"]
+        },
+        {
+          "title": "Team Development",
+          "text": "Mentored 2 junior engineers through pair programming and code reviews, elevating team code quality and reducing production defects.",
+          "keywords": ["mentorship", "pair programming", "code reviews", "team development", "quality"],
+          "categories": ["Leadership", "Mentorship", "Quality"]
+        }
+      ]
+    },
+    {
+      "company": "LOGICMANAGER",
+      "title": "Software Engineer",
+      "dates": "03/2020 - 03/2021",
+      "previousTitle": "Associate Software Engineer",
+      "previousDates": "05/2019 - 03/2020",
+      "bullets": [
+        {
+          "title": "Greenfield Engineering",
+          "text": "Promoted from Associate in <1 year while engineering the next-gen enterprise risk platform from scratch using React, Redux, Java, and SQL; helped drive the company's transition to a modern stack.",
+          "keywords": ["React", "Redux", "Java", "SQL", "greenfield", "enterprise", "promotion"],
           "categories": ["Full Stack", "Product Engineering"]
         },
         {
-          "title": "Promotion & Team Collaboration",
-          "text": "Promoted from Junior Engineer in 10 months after delivering critical features ahead of schedule; collaborated with product and design teams on roadmap planning and feature specifications.",
-          "keywords": ["promotion", "collaboration", "cross-functional", "product", "design"],
-          "categories": ["Leadership", "Product"]
-        },
-        {
-          "title": "Testing & Quality",
-          "text": "Established comprehensive testing strategy with 85% code coverage using Jest and Pytest; implemented automated visual regression testing reducing production bugs by 50%.",
-          "keywords": ["testing", "Jest", "Pytest", "quality", "visual regression", "automation"],
-          "categories": ["Testing", "Quality Assurance"]
+          "title": "Full Lifecycle Development",
+          "text": "Engaged in the complete software development lifecycle (SDLC), translating customer feedback into feature concepts, assisting with sprint planning and ticket breakdown, and executing code delivery.",
+          "keywords": ["SDLC", "sprint planning", "customer feedback", "agile", "feature development"],
+          "categories": ["Product", "Agile", "Full Stack"]
         }
       ]
     },
     {
-      "company": "STARTUP LABS",
-      "title": "Junior Software Engineer",
-      "dates": "01/2019 -- 08/2020",
+      "company": "KAON INTERACTIVE",
+      "title": "Application Software Developer",
+      "dates": "11/2018 - 05/2019",
       "bullets": [
         {
-          "title": "Feature Development",
-          "text": "Developed user authentication system and dashboard features using React, Redux, and Node.js; contributed to mobile app using React Native.",
-          "keywords": ["React", "Redux", "Node.js", "React Native", "authentication", "mobile"],
-          "categories": ["Full Stack", "Mobile"]
-        },
-        {
-          "title": "Database & API Design",
-          "text": "Designed PostgreSQL database schema and RESTful APIs for content management system; implemented data migrations and optimization strategies.",
-          "keywords": ["PostgreSQL", "REST API", "database design", "data migration", "backend"],
-          "categories": ["Backend", "Database"]
-        }
-      ]
-    },
-    {
-      "company": "FREELANCE",
-      "title": "Web Developer",
-      "dates": "06/2018 -- 12/2018",
-      "bullets": [
-        {
-          "title": "Client Projects",
-          "text": "Built responsive websites for 5+ clients using HTML, CSS, JavaScript, and WordPress; managed project timelines and client communications.",
-          "keywords": ["HTML", "CSS", "JavaScript", "WordPress", "responsive", "client management"],
-          "categories": ["Frontend", "Client Work"]
+          "title": "Frontend Engineering",
+          "text": "Built interactive 3D marketing applications for global B2B brands using JavaScript, SCSS, and proprietary 3D APIs.",
+          "keywords": ["JavaScript", "SCSS", "3D", "B2B", "marketing applications", "frontend"],
+          "categories": ["Frontend", "Product Engineering"]
         }
       ]
     }
   ],
   "education": [
-    "B.S. Computer Science, State University (2018)",
-    "AWS Certified Solutions Architect - Associate (2022)"
+    "AWS Certified Developer - Associate | CompTIA Security+ (2023)",
+    "Software Engineering Immersive, General Assembly (2018)",
+    "B.A. Economics & Organizational Studies, Pitzer College (2013)"
   ]
 }
