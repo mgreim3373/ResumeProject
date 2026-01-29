@@ -1,0 +1,23 @@
+# Generated resume files - these are user-specific
+*_tailored.json
+*_resume.docx
+
+# User's personal master resume data
+# (Uncomment if you create your own master_resume.json)
+# my_resume_data.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# User's job description files (optional - uncomment to exclude)
+# *_job.txt
+# !sample_job.txt
+# !backend_job.txt

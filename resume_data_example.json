@@ -1,0 +1,133 @@
+{
+  "name": "ALEX JOHNSON",
+  "title": "Senior Software Engineer",
+  "contact": {
+    "location": "San Francisco, CA",
+    "phone": "555.123.4567",
+    "email": "alex.johnson@email.com"
+  },
+  "skills": {
+    "Languages & Frameworks": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "React",
+      "Node.js",
+      "Django",
+      "Next.js",
+      "GraphQL"
+    ],
+    "Cloud & DevOps": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "CI/CD",
+      "Jenkins",
+      "GitHub Actions"
+    ],
+    "Architecture & Data": [
+      "Microservices",
+      "REST APIs",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Event-Driven Architecture"
+    ],
+    "AI & Tools": [
+      "Git",
+      "Jira",
+      "Agile",
+      "TDD",
+      "System Design"
+    ]
+  },
+  "experiences": [
+    {
+      "company": "TECH INNOVATIONS INC",
+      "title": "Senior Software Engineer",
+      "dates": "06/2022 -- Present",
+      "bullets": [
+        {
+          "title": "Platform Architecture & Leadership",
+          "text": "Led architecture and development of customer engagement platform serving 500k daily users using React, TypeScript, and Node.js microservices on AWS; mentored team of 3 engineers and established code review standards.",
+          "keywords": ["architecture", "React", "TypeScript", "Node.js", "AWS", "microservices", "leadership", "mentorship"],
+          "categories": ["Full Stack", "Architecture", "Leadership"]
+        },
+        {
+          "title": "Performance Optimization",
+          "text": "Reduced API response time by 60% through database query optimization and Redis caching implementation; improved page load speed by 40% using Next.js server-side rendering.",
+          "keywords": ["performance", "optimization", "Redis", "caching", "Next.js", "database"],
+          "categories": ["Performance", "Backend"]
+        },
+        {
+          "title": "CI/CD & Infrastructure",
+          "text": "Designed and implemented automated CI/CD pipeline using GitHub Actions and Docker, reducing deployment time from 2 hours to 15 minutes with zero-downtime deployments.",
+          "keywords": ["CI/CD", "GitHub Actions", "Docker", "automation", "deployment", "infrastructure"],
+          "categories": ["DevOps", "Infrastructure"]
+        }
+      ]
+    },
+    {
+      "company": "DIGITAL SOLUTIONS CO",
+      "title": "Software Engineer",
+      "dates": "08/2020 -- 06/2022",
+      "bullets": [
+        {
+          "title": "Full-Stack Development",
+          "text": "Built e-commerce checkout system processing $2M+ monthly revenue using React frontend and Django REST backend; integrated Stripe payments and implemented fraud detection.",
+          "keywords": ["React", "Django", "REST API", "payments", "Stripe", "e-commerce", "full-stack"],
+          "categories": ["Full Stack", "Product Engineering"]
+        },
+        {
+          "title": "Promotion & Team Collaboration",
+          "text": "Promoted from Junior Engineer in 10 months after delivering critical features ahead of schedule; collaborated with product and design teams on roadmap planning and feature specifications.",
+          "keywords": ["promotion", "collaboration", "cross-functional", "product", "design"],
+          "categories": ["Leadership", "Product"]
+        },
+        {
+          "title": "Testing & Quality",
+          "text": "Established comprehensive testing strategy with 85% code coverage using Jest and Pytest; implemented automated visual regression testing reducing production bugs by 50%.",
+          "keywords": ["testing", "Jest", "Pytest", "quality", "visual regression", "automation"],
+          "categories": ["Testing", "Quality Assurance"]
+        }
+      ]
+    },
+    {
+      "company": "STARTUP LABS",
+      "title": "Junior Software Engineer",
+      "dates": "01/2019 -- 08/2020",
+      "bullets": [
+        {
+          "title": "Feature Development",
+          "text": "Developed user authentication system and dashboard features using React, Redux, and Node.js; contributed to mobile app using React Native.",
+          "keywords": ["React", "Redux", "Node.js", "React Native", "authentication", "mobile"],
+          "categories": ["Full Stack", "Mobile"]
+        },
+        {
+          "title": "Database & API Design",
+          "text": "Designed PostgreSQL database schema and RESTful APIs for content management system; implemented data migrations and optimization strategies.",
+          "keywords": ["PostgreSQL", "REST API", "database design", "data migration", "backend"],
+          "categories": ["Backend", "Database"]
+        }
+      ]
+    },
+    {
+      "company": "FREELANCE",
+      "title": "Web Developer",
+      "dates": "06/2018 -- 12/2018",
+      "bullets": [
+        {
+          "title": "Client Projects",
+          "text": "Built responsive websites for 5+ clients using HTML, CSS, JavaScript, and WordPress; managed project timelines and client communications.",
+          "keywords": ["HTML", "CSS", "JavaScript", "WordPress", "responsive", "client management"],
+          "categories": ["Frontend", "Client Work"]
+        }
+      ]
+    }
+  ],
+  "education": [
+    "B.S. Computer Science, State University (2018)",
+    "AWS Certified Solutions Architect - Associate (2022)"
+  ]
+}

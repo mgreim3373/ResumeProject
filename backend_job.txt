@@ -1,0 +1,75 @@
+Backend Engineer - Payments Platform
+
+Company: FinTech Solutions Inc.
+Location: Remote (United States)
+Type: Full-time
+Compensation: $150K-$190K + equity
+
+About Us
+
+FinTech Solutions is building the next generation of payment infrastructure for small businesses. Our platform processes millions of transactions daily and we're backed by top-tier investors.
+
+The Role
+
+We're hiring a Backend Engineer to join our Payments Platform team. You'll work on core payment processing systems, build scalable microservices, and ensure reliability for mission-critical financial transactions.
+
+Responsibilities
+
+- Design and implement high-performance backend services using Java and Spring Boot
+- Build and maintain microservices architecture processing payment transactions
+- Work with event-driven systems using Kafka and RabbitMQ
+- Optimize database queries and data models for PostgreSQL
+- Implement monitoring and observability using Prometheus and Grafana
+- Collaborate with frontend engineers on API design
+- Participate in on-call rotation for production systems
+- Write comprehensive unit and integration tests
+
+Required Skills
+
+- 4+ years backend engineering experience
+- Strong proficiency in Java and Spring Boot
+- Experience with microservices architecture
+- Knowledge of SQL databases (PostgreSQL, MySQL)
+- Understanding of RESTful API design principles
+- Experience with message queues (Kafka, RabbitMQ, SQS)
+- Familiarity with AWS services (Lambda, ECS, RDS, S3)
+- Strong testing practices (TDD, integration testing)
+
+Preferred Qualifications
+
+- Experience in payments, fintech, or high-transaction systems
+- Knowledge of event-driven architecture patterns
+- Experience with Docker and Kubernetes
+- Familiarity with Terraform or infrastructure as code
+- Understanding of PCI compliance and security best practices
+- Experience with monitoring tools (Datadog, Prometheus, Grafana)
+- Previous work on distributed systems at scale
+- Track record of improving system performance and reliability
+
+What We're Looking For
+
+- Strong problem-solving and debugging skills
+- Ability to design scalable, fault-tolerant systems
+- Excellent communication and collaboration abilities
+- Passion for code quality and best practices
+- Experience mentoring junior engineers (preferred)
+- Demonstrated career growth and increasing responsibility
+
+Our Stack
+
+Backend: Java 17, Spring Boot, Maven
+Data: PostgreSQL, Redis, DynamoDB
+Messaging: Kafka, RabbitMQ
+Infrastructure: AWS (ECS, Lambda, RDS), Docker, Kubernetes
+Monitoring: Datadog, Prometheus, Grafana
+CI/CD: GitLab CI, Terraform
+
+Benefits
+
+- Competitive salary and equity package
+- Comprehensive health, dental, and vision insurance
+- 401(k) with company match
+- Unlimited PTO
+- Remote-first culture
+- Professional development stipend
+- Home office setup budget

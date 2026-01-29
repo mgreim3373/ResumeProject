@@ -1,0 +1,59 @@
+Senior Full-Stack Software Engineer
+
+About the Company
+
+TechCorp is a fast-growing B2B SaaS company building enterprise software solutions. We've recently raised our Series B and are scaling our engineering team to support rapid growth.
+
+About the Role
+
+We're seeking a Senior Full-Stack Software Engineer to join our product engineering team. This is a high-ownership role for engineers who enjoy building end-to-end features, working closely with product and design, and shipping impactful solutions.
+
+Location: Remote (US/Canada)
+Compensation: $140K-$180K base + equity
+Employment: Full-time
+
+What You'll Do
+
+- Build and ship new product features from concept through production
+- Own projects end-to-end across frontend and backend systems
+- Collaborate with product managers and designers on roadmap planning
+- Write clean, maintainable code with comprehensive test coverage
+- Participate in code reviews and contribute to engineering best practices
+- Work directly with customers to understand their workflows and pain points
+
+Required Qualifications
+
+- 5+ years of professional software engineering experience
+- Strong experience with TypeScript, JavaScript, React, and Node.js
+- Experience building and scaling production applications
+- Solid understanding of RESTful APIs and database design
+- Experience with AWS or similar cloud platforms
+- Strong communication skills and ability to work collaboratively
+- Bachelor's degree in Computer Science or related field (or equivalent experience)
+
+Nice to Have
+
+- Experience with microservices architecture
+- Knowledge of Docker, Kubernetes, or container orchestration
+- Experience with CI/CD pipelines and DevOps practices
+- Background in B2B SaaS or enterprise software
+- Experience with PostgreSQL, Redis, or similar databases
+- Open source contributions or technical writing
+- Experience mentoring junior engineers
+
+Our Tech Stack
+
+- Frontend: React, TypeScript, Next.js
+- Backend: Node.js, Express, TypeScript
+- Database: PostgreSQL, Redis
+- Infrastructure: AWS, Docker, Kubernetes
+- Tools: GitHub, Jira, Datadog
+
+What We Offer
+
+- Competitive salary and equity package
+- Comprehensive health benefits
+- Flexible remote work
+- Professional development budget
+- Modern tech stack and tooling
+- Collaborative, high-performing team culture
