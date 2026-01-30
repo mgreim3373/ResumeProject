@@ -15,7 +15,7 @@ This resume builder uses Claude AI to analyze job descriptions and generate tail
 
 ## How It Works
 
-1. **You maintain a master resume** (`resume_data_example.json`) with ALL your experiences and skills
+1. **You maintain a master resume** (`master_resume.json`) with ALL your experiences and skills
 2. **You provide a job description** (text file)
 3. **Claude identifies gaps** and asks if you have experience with missing skills
 4. **Claude generates a tailored summary** optimized for the job
@@ -34,7 +34,7 @@ pip install python-docx --break-system-packages
 
 ### 2. Create Your Master Resume Data
 
-Edit `resume_data_example.json` with your information:
+Edit `master_resume.json` with your information:
 
 ```json
 {
@@ -97,7 +97,7 @@ Or specify a custom master resume:
 ### What Happens
 
 1. **Gap Analysis**: Claude identifies skills in the job posting that aren't in your resume
-2. **Gap Questions**: You're asked about missing skills (e.g., "Do you have GraphQL experience?")
+2. **Gap Questions**: You're asked about missing skills, where you used them, and Claude suggests which bullet to add them to
 3. **Resume Generation**: Creates tailored JSON with new summary and reordered skills
 4. **ATS Optimization Loop**:
    - Presents keyword insertion opportunities one-by-one
@@ -121,7 +121,9 @@ Q: Do you have GraphQL experience?
 A: No
 
 Q: Do you have SonarQube experience?
-A: Yes
+A: Yes, at RAFT for code quality checks
+
+Claude: I'll add SonarQube to your RAFT Cloud & Analytics bullet.
 
 [Resume generated with new summary and reordered skills]
 
@@ -155,11 +157,10 @@ Resume Complete!
 ```
 project/
 ├── README.md                          # This file
-├── resume_data_example.json           # Your master resume data
+├── master_resume.json                 # Your master resume data
 ├── create_resume.py                   # Python formatter (formatting only)
 ├── .claude/skills/resume/skill.md     # Claude Code skill definition
-├── sample_job.txt                     # Example job description
-├── backend_job.txt                    # Example backend job description
+├── example_job.txt                    # Example job description
 └── (generated files)
     └── *_resume.docx                  # Generated Word documents
 ```
