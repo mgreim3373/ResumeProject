@@ -1,211 +1,187 @@
-# AI-Powered Resume Builder
+# ATS Resume Coach
 
-Generate ATS-optimized, tailored resumes from your master resume data using Claude Code.
+An AI-powered resume optimization tool that analyzes your resume against job postings, suggests improvements, and grades your revisions in real-time.
 
 ## Overview
 
-This resume builder uses Claude AI to analyze job descriptions and generate tailored resumes optimized for Applicant Tracking Systems (ATS). It preserves your original writing while making surgical keyword insertions to maximize match rates.
+This tool uses Claude AI to coach you through optimizing your resume for Applicant Tracking Systems (ATS). It provides specific suggestions and lets YOU make the edits - then grades your revisions iteratively until you're satisfied.
 
 **Key Features:**
-- Preserves your original resume text with minimal changes
-- Asks about skill gaps before making assumptions
-- Presents ATS optimization suggestions one-by-one for your approval
-- Interactive screenshot feedback to ensure one-page fit
-- Generates professionally formatted Word documents
-
-## How It Works
-
-1. **You maintain a master resume** (`resume_data_example.json`) with ALL your experiences and skills
-2. **You provide a job description** (text file)
-3. **Claude identifies gaps** and asks if you have experience with missing skills
-4. **Claude generates a tailored summary** optimized for the job
-5. **Claude reorders skills** to prioritize job keywords
-6. **ATS optimization loop** presents keyword insertion opportunities one-by-one
-7. **Screenshot verification** ensures the resume fits on one page
-8. **Python formats it** into a `.docx` file
+- Calculates ATS keyword match score against job postings
+- Suggests qualifications you could add (if you have the experience)
+- Suggests small text changes to existing content (keyword insertions)
+- Grades your revisions and shows score improvement
+- Iterates until you're satisfied with your score
 
 ## Setup
 
-### 1. Install Dependencies
+### 1. Install Claude Code
 
-```bash
-pip install python-docx --break-system-packages
+This tool runs as a Claude Code slash command. Install Claude Code if you haven't already.
+
+### 2. Create Your Base Resume
+
+Create a file called `ORIGINAL_RESUME.txt` in this directory with your current resume text. This is your base resume that the tool will analyze.
+
+```
+ORIGINAL_RESUME.txt
 ```
 
-### 2. Create Your Master Resume Data
+This file should contain your full resume text - the tool will read from it automatically.
 
-Edit `resume_data_example.json` with your information:
+### 3. Add Job Descriptions
 
-```json
-{
-  "name": "YOUR NAME",
-  "title": "Your Job Title (Optional Credential)",
-  "contact": {
-    "location": "City, State",
-    "phone": "555.123.4567",
-    "email": "your.email@example.com"
-  },
-  "summary": "Your default professional summary (will be rewritten for each job).",
-  "skills": {
-    "Category 1": ["Skill1", "Skill2", "Skill3"],
-    "Category 2": ["Skill4", "Skill5"]
-  },
-  "experiences": [
-    {
-      "company": "COMPANY NAME",
-      "title": "Your Current Title",
-      "dates": "MM/YYYY - Present",
-      "previousTitle": "Previous Title (optional - for promotions)",
-      "previousDates": "MM/YYYY - MM/YYYY (optional)",
-      "bullets": [
-        {
-          "title": "Short Title",
-          "text": "Full description of what you did and the impact.",
-          "keywords": ["keyword1", "keyword2"],
-          "categories": ["Category"]
-        }
-      ]
-    }
-  ],
-  "education": [
-    "Degree, University (Year)",
-    "Certification Name (Year)"
-  ]
-}
-```
-
-**Field Notes:**
-- `title`: Include clearance or credentials here (e.g., "Senior Engineer (Active Secret Clearance)")
-- `previousTitle` / `previousDates`: Optional - use for showing promotions at same company
-- `keywords` / `categories` in bullets: Optional - help Claude understand what each bullet demonstrates
-- Any number of experiences and bullets supported
-- Education can be strings or objects
+Save job postings as `.txt` files in this directory (e.g., `backend_job.txt`, `frontend_job.txt`).
 
 ## Usage
-
-### Generate a Tailored Resume
 
 ```bash
 /resume job_description.txt
 ```
 
-Or specify a custom master resume:
-```bash
-/resume job_description.txt my_resume_data.json
+The tool will:
+1. Read your `ORIGINAL_RESUME.txt`
+2. Read the job description file you specified
+3. Calculate your current ATS score
+4. Provide improvement suggestions
+
+## How It Works
+
+```
+1. You run /resume with a job posting file
+2. Claude reads ORIGINAL_RESUME.txt + job posting
+3. Claude calculates your ATS score
+4. Claude suggests:
+   - Qualifications to ADD (new skills/experience)
+   - Text changes to EXISTING content
+5. You make changes and paste updated resume text in chat
+6. Claude grades new version, shows improvement
+7. Repeat until you type "done"
 ```
 
-### What Happens
-
-1. **Gap Analysis**: Claude identifies skills in the job posting that aren't in your resume
-2. **Gap Questions**: You're asked about missing skills (e.g., "Do you have GraphQL experience?")
-3. **Resume Generation**: Creates tailored JSON with new summary and reordered skills
-4. **ATS Optimization Loop**:
-   - Calculates initial ATS keyword match score
-   - Presents keyword insertion opportunities one-by-one
-   - You approve or skip each change
-   - Continues until score reaches 90%+ and all suggestions are presented
-5. **Screenshot Verification**: You share a screenshot if it overflows one page
-6. **Final Report**: Shows matched keywords and remaining gaps
-7. **Cleanup**: Deletes intermediate `*_tailored.json` files
-
-### Example Session
+## Example Session
 
 ```
 > /resume backend_job.txt
 
-Gap Analysis:
-- GraphQL: Not in resume
-- SonarQube: Not in resume
+═══════════════════════════════════════════════════
+ATS KEYWORD ANALYSIS
+═══════════════════════════════════════════════════
 
-Q: Do you have GraphQL experience?
-A: No
+Current Score: 18/25 keywords matched (72%)
 
-Q: Do you have SonarQube experience?
-A: Yes
+MATCHED KEYWORDS:
+✓ React, TypeScript, AWS, Docker, Kubernetes, microservices...
 
-Initial ATS Score: 77% (17/22 keywords)
+MISSING KEYWORDS:
+✗ GraphQL, full stack, CI/CD, frontend, system integration...
 
-Q: Add 'frontend development' to summary?
-   Current: "...Expert in React, TypeScript, microservices..."
-   Proposed: "...Expert in React, TypeScript, frontend development, microservices..."
-A: Yes
+═══════════════════════════════════════════════════
+QUALIFICATIONS YOU COULD ADD
+(if you have this experience)
+═══════════════════════════════════════════════════
 
-Updated Score: 82%
+1. GraphQL
+   → Add to skills if you've used it
+   → Mention in a bullet if you've integrated GraphQL APIs
 
-[...more suggestions...]
+2. Customer Collaboration
+   → Add experience working directly with customers
 
-Final Score: 95%
+═══════════════════════════════════════════════════
+SMALL TEXT CHANGES TO BOOST SCORE
+═══════════════════════════════════════════════════
 
-Please check if resume fits on one page. Share screenshot if overflow.
+1. Add "full-stack" to your title
+   Current: "Lead Mission Engineer..."
+   Suggested: "Lead Full-Stack Mission Engineer..."
+   Keyword: full stack (+1 match)
 
-[User confirms it fits]
+2. Add "CI/CD" alongside "GitLab CI"
+   Current: "...implementing GitLab CI pipelines..."
+   Suggested: "...implementing GitLab CI/CD pipelines..."
+   Keyword: CI/CD (+1 match)
 
-Resume Complete!
-- Matched Keywords: 21/22 (95%)
-- File: backend_resume.docx
+═══════════════════════════════════════════════════
+READY TO GRADE YOUR REVISIONS
+═══════════════════════════════════════════════════
+
+Paste your updated resume text below.
+Type "done" when you're finished optimizing.
+
+> [User pastes updated resume text directly in chat]
+
+═══════════════════════════════════════════════════
+UPDATED ATS SCORE
+═══════════════════════════════════════════════════
+
+Previous Score: 18/25 (72%)
+New Score:      23/25 (92%) ⬆️ +20%
+
+NEWLY MATCHED:
++ full stack
++ CI/CD
++ frontend
++ high-performance
++ system integration
+
+STILL MISSING:
+✗ GraphQL (not in your experience)
+
+Great improvement! Paste another revision or type "done".
+
+> done
+
+═══════════════════════════════════════════════════
+FINAL ATS ANALYSIS
+═══════════════════════════════════════════════════
+
+Final Score: 23/25 keywords (92%)
+
+Your resume is well-optimized for this position!
 ```
+
+## Key Principles
+
+### 1. You Make the Edits
+Claude coaches and grades - you decide what changes to make. This keeps you in control of your resume's voice and content.
+
+### 2. No Fabrication
+Only add skills and experience you genuinely have. Claude will suggest opportunities but never fabricate qualifications.
+
+### 3. Iterative Improvement
+Paste as many revisions as you want. Each revision gets scored and compared to the previous version.
+
+### 4. Specific Suggestions
+Every suggestion includes:
+- The exact keyword to add
+- Where to add it (which section/bullet)
+- Before/after example text
+- Expected score impact
+
+## Tips for High ATS Scores
+
+1. **Match exact phrasing** - Use the same terms as the job posting (e.g., "CI/CD" not just "continuous integration")
+
+2. **Include both forms** - Add acronyms AND full names (e.g., "Kubernetes (K8s)")
+
+3. **Front-load keywords** - Put important keywords in your summary and skills sections
+
+4. **Be specific** - "React, TypeScript, AWS" beats "modern web technologies"
+
+5. **Don't stuff** - Keywords should fit naturally in context
 
 ## File Structure
 
 ```
 project/
 ├── README.md                          # This file
-├── resume_data_example.json           # Your master resume data
-├── create_resume.py                   # Python formatter (formatting only)
+├── ORIGINAL_RESUME.txt                # Your base resume (create this!)
 ├── .claude/skills/resume/skill.md     # Claude Code skill definition
 ├── sample_job.txt                     # Example job description
-├── backend_job.txt                    # Example backend job description
-└── (generated files)
-    └── *_resume.docx                  # Generated Word documents
+└── (your job files)
+    └── backend_job.txt                # Job postings to optimize for
 ```
-
-## Key Principles
-
-### 1. Preserve Original Text
-Your bullet text is preserved as much as possible. Only surgical keyword insertions are made (e.g., adding "high-performance" or "system integration").
-
-### 2. No Fabrication
-Claude **never** makes up skills or experience. If you don't have a skill, it remains a gap.
-
-### 3. User Approval
-Every text change is presented for your approval before being applied.
-
-### 4. ATS Optimization
-- Uses exact keyword matches from job descriptions
-- Reorders skills to prioritize job requirements
-- Includes both acronyms and full forms (e.g., "Kubernetes (K8s)")
-
-### 5. One-Page Focus
-The screenshot feedback loop helps trim content to fit one page while preserving ATS keywords.
-
-## Customizing Formatting
-
-The Python script (`create_resume.py`) handles all formatting. To customize:
-
-- **Fonts**: Edit `FONT_HEADER` and `FONT_BODY` constants
-- **Sizes**: Edit `SIZE_NAME`, `SIZE_BODY`, `SIZE_SECTION` values
-- **Margins**: Edit `MARGINS` value (in inches)
-- **Spacing**: Edit `SPACE_*` values (in points)
-
-## Troubleshooting
-
-### Resume Overflows One Page
-
-Share a screenshot and Claude will suggest:
-1. Trimming orphaned words (short lines)
-2. Removing non-essential skills (not in job posting)
-3. Shortening older position bullets
-4. As last resort, removing oldest positions
-
-### Missing python-docx
-
-```bash
-pip install python-docx --break-system-packages
-```
-
-### ATS Score Won't Reach 90%
-
-If the job requires skills you don't have (like GraphQL), the score may not reach 90%. This is expected - don't fabricate experience.
 
 ## License
 

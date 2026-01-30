@@ -1,0 +1,52 @@
+MIKE GREIM | Senior Software Engineer (Active Secret Clearance)
+Seattle, WA | 949.244.7806 | mgreim3373@gmail.com
+
+Senior Software Engineer with 6+ years experience delivering mission-critical Java/Spring microservices. Expert in architecting secure GovCloud infrastructure, AI-driven tools, and Terraform-managed environments.
+
+TECHNICAL SKILLS
+
+Languages & Frameworks: Java, Spring Boot, SQL, TypeScript, Node.js, React, Next.js, Python
+Cloud & DevOps: AWS (GovCloud, Lambda, ECS), Kubernetes (k8s), Terraform, Docker, GitLab CI, IAM, OAuth2
+Architecture & Data: Microservices, Event-Driven Systems, Kafka, RabbitMQ, PostgreSQL, Elasticsearch, REST
+AI & Engineering Tools: Claude Code, Cursor, LLM Agent Workflows, Amazon Bedrock, Jira
+Observability & Practices: Prometheus, Grafana, OpenTelemetry, TDD, JUnit, Mockito, Agile
+
+PROFESSIONAL EXPERIENCE
+
+RAFT LLC | Senior Software Engineer                                              07/2023 - Present
+
+• AI Automation Leadership: Led a 3-engineer squad architecting an AI-powered schema and parsing code generation tool (React/LLM); managed sprint planning and technical story breakdown while partnering with Product stakeholders to productize the prototype into a core commercial offering.
+
+• Cloud & Analytics: Built a critical uptime monitoring system for government clients; directed the deployment of secure, Terraform-managed infrastructure (Superset, Redshift, Keycloak) on AWS GovCloud, implementing GitLab CI pipelines that reduced deployment time from hours to minutes.
+
+• Technical Strategy: Defined engineering standards for AI adoption (Claude Code).
+
+• Mission-Critical Event Systems: Enhanced the Air Force command and control suite by maintaining an asynchronous event management service (produce/consume/replay) using Java, Spring, RabbitMQ, and Redis; managed SQL persistence and ensured system stability through rigorous TDD and integration testing.
+
+JOBCASE | Senior Software Engineer                                               07/2022 - 04/2023
+Software Engineer                                                                03/2021 - 07/2022
+
+• Full-Stack Architecture: Engineered scalable microservice features for a 250k+ DAU social platform using React, Java Spring, and AWS.
+
+• Notification System Architecture: Designed and built persistent cross-user messaging engine driving engagement for tens of thousands of users; defined the logic for follow suggestions and complex comment interactions.
+
+• Operational Excellence: Established robust monitoring and testing protocols using New Relic, Sumo Logic, and regression testing; served as a primary on-call engineer to minimize platform downtime.
+
+• Team Development: Mentored 2 junior engineers through pair programming and code reviews, elevating team code quality and reducing production defects.
+
+LOGICMANAGER | Software Engineer                                                 03/2020 - 03/2021
+Associate Software Engineer                                                      05/2019 - 03/2020
+
+• Greenfield Engineering: Promoted from Associate in <1 year while engineering the next-gen enterprise risk platform from scratch using React, Redux, Java, and SQL; helped drive the company's transition to a modern stack.
+
+• Full Lifecycle Development: Engaged in the complete software development lifecycle (SDLC), translating customer feedback into feature concepts, assisting with sprint planning and ticket breakdown, and executing code delivery.
+
+KAON INTERACTIVE | Application Software Developer                                11/2018 - 05/2019
+
+• Frontend Engineering: Built interactive 3D marketing applications for global B2B brands using JavaScript, SCSS, and proprietary 3D APIs.
+
+EDUCATION & CERTIFICATES
+
+• AWS Certified Developer - Associate | CompTIA Security+ (2023)
+• Software Engineering Immersive, General Assembly (2018)
+• B.A. Economics & Organizational Studies, Pitzer College (2013)
