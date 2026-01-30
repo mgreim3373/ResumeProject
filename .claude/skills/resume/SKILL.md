@@ -131,10 +131,48 @@ Write a new JSON file (e.g., `backend_tailored.json`) with:
 
 ### 11. ATS Score Optimization Loop
 
-After generating the initial resume, calculate and optimize the ATS score:
+After generating the initial resume, present keyword optimization opportunities:
 
-#### Step 1: Calculate Initial ATS Score
-Perform a keyword match analysis between the job posting and the tailored resume:
+#### Step 1: Research ALL Improvement Opportunities
+Identify ALL opportunities for small text changes that could boost the ATS score:
+
+**Search for opportunities:**
+1. Job keywords NOT yet in resume that COULD be added truthfully
+2. Places where synonyms could be swapped for exact job phrasing
+3. Summary additions (if under 40 words)
+4. Bullet text where keywords fit naturally
+
+**For each opportunity, note:**
+- The keyword to add
+- Where it would go (which section/bullet)
+- The exact text change (before → after)
+- Why it's truthful (based on user's actual experience)
+
+**Identify 5-10 highest-impact suggestions.**
+
+#### Step 2: Present ALL Changes One-by-One (Use AskUserQuestion)
+Present EVERY suggested change to the user:
+
+"I found an opportunity to boost your ATS score. Do you approve this change?"
+
+**Present:**
+- Current text
+- Proposed text (with change highlighted)
+- Keyword being added
+
+**Options:**
+- "Yes, make this change"
+- "No, skip this one"
+
+**IMPORTANT:** Do NOT calculate or show score after each change. Just collect approvals.
+
+#### Step 3: Apply ALL Approved Changes
+After presenting ALL suggestions:
+- Update the tailored JSON with ALL approved changes at once
+- Track which changes were made
+
+#### Step 4: Calculate Final ATS Score
+Only AFTER all changes are applied, calculate the ATS score:
 
 **Count matches for:**
 - Required skills mentioned in job posting
@@ -151,61 +189,10 @@ Perform a keyword match analysis between the job posting and the tailored resume
 ```
 ATS Keyword Match Analysis:
 - Matched: X/Y key terms
-- Estimated ATS Score: XX-XX%
+- Estimated ATS Score: XX%
 ```
 
-#### Step 2: Research ALL Improvement Opportunities
-Identify ALL opportunities for small text changes that could boost the score:
-
-**Search for opportunities:**
-1. Job keywords NOT yet in resume that COULD be added truthfully
-2. Places where synonyms could be swapped for exact job phrasing
-3. Summary additions (if under 40 words)
-4. Bullet text where keywords fit naturally
-
-**For each opportunity, note:**
-- The keyword to add
-- Where it would go (which section/bullet)
-- The exact text change (before → after)
-- Why it's truthful (based on user's actual experience)
-
-**Identify 3-5 highest-impact suggestions.**
-
-#### Step 3: Present ALL Changes One-by-One (Use AskUserQuestion)
-Present EVERY suggested change to the user, regardless of current score:
-
-"I found an opportunity to boost your ATS score. Do you approve this change?"
-
-**Present:**
-- Current text
-- Proposed text (with change highlighted)
-- Keyword being added
-- Estimated score impact
-
-**Options:**
-- "Yes, make this change"
-- "No, skip this one"
-
-**IMPORTANT:** Continue presenting ALL suggested changes even after score exceeds 90%. The goal is to maximize the score, not just hit a threshold.
-
-#### Step 4: Apply Approved Changes
-- Update the tailored JSON with each approved change
-- Track which changes were made
-- Show updated score after each change
-
-#### Step 5: Verify Score & Complete
-After ALL suggested changes have been presented:
-1. Calculate final ATS score
-2. Verify the BOTTOM of the score range is at least 90%
-3. If score range starts below 90%, research additional opportunities and repeat
-4. If no more truthful opportunities exist, proceed to Step 12
-
-**Exit conditions:**
-- ALL suggested changes have been presented AND score range starts at 90%+
-- No more truthful keyword opportunities remain
-- User chooses to continue without more changes
-
-#### Step 6: Regenerate .docx
+#### Step 5: Regenerate .docx
 After all ATS optimizations are complete:
 - Run: `python3 create_resume.py [tailored].json [output].docx`
 - Confirm regeneration to user
@@ -321,7 +308,8 @@ After the user confirms the resume is complete:
 ## Output:
 - Generate a tailored `[jobname]_resume.docx` file
 - Show summary of changes made (should be minimal)
-- ATS score optimization loop presenting ALL suggested changes (ensure score range starts at 90%+)
+- Present ALL suggested keyword changes for user approval (no score shown until end)
+- Calculate ATS score once after all changes are applied
 - Request screenshot for one-page verification
 - Final ATS score report with keyword match details
 - Clean up intermediate `*_tailored.json` files

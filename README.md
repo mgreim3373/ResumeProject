@@ -100,10 +100,10 @@ Or specify a custom master resume:
 2. **Gap Questions**: You're asked about missing skills (e.g., "Do you have GraphQL experience?")
 3. **Resume Generation**: Creates tailored JSON with new summary and reordered skills
 4. **ATS Optimization Loop**:
-   - Calculates initial ATS keyword match score
    - Presents keyword insertion opportunities one-by-one
    - You approve or skip each change
-   - Continues until score reaches 90%+ and all suggestions are presented
+   - All approved changes are applied at once
+   - ATS score calculated once at the end
 5. **Screenshot Verification**: You share a screenshot if it overflows one page
 6. **Final Report**: Shows matched keywords and remaining gaps
 7. **Cleanup**: Deletes intermediate `*_tailored.json` files
@@ -123,18 +123,23 @@ A: No
 Q: Do you have SonarQube experience?
 A: Yes
 
-Initial ATS Score: 77% (17/22 keywords)
+[Resume generated with new summary and reordered skills]
 
 Q: Add 'frontend development' to summary?
    Current: "...Expert in React, TypeScript, microservices..."
    Proposed: "...Expert in React, TypeScript, frontend development, microservices..."
 A: Yes
 
-Updated Score: 82%
+Q: Add 'CI/CD' to GitLab CI mention?
+   Current: "...implementing GitLab CI pipelines..."
+   Proposed: "...implementing GitLab CI/CD pipelines..."
+A: Yes
 
 [...more suggestions...]
 
-Final Score: 95%
+All changes applied.
+
+Final ATS Score: 95% (21/22 keywords)
 
 Please check if resume fits on one page. Share screenshot if overflow.
 
